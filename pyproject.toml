@@ -1,0 +1,19 @@
+[build-system]
+requires = ["maturin>=1.9,<2"]
+build-backend = "maturin"
+
+[project]
+name = "calamine-stream"
+version = "0.1.0"
+description = "Stream .xlsx rows into Python with calamine, row by row"
+requires-python = ">=3.10"
+
+[dependency-groups]
+dev = ["openpyxl", "pytest"]
+
+[tool.uv]
+# Rebuild the extension when the Rust code changes.
+cache-keys = [{ file = "pyproject.toml" }, { file = "Cargo.toml" }, { file = "src/**/*.rs" }]
+
+[tool.maturin]
+module-name = "calamine_stream"

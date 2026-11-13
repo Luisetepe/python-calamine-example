@@ -1,0 +1,11 @@
+[package]
+name = "calamine_stream"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+calamine = { version = "0.38", features = ["chrono"] }
+pyo3 = { version = "0.30", features = ["abi3-py310", "chrono"] }
+
+[lib]
+crate-type = ["cdylib"]
